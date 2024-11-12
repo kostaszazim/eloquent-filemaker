@@ -302,7 +302,7 @@ class FileMakerConnection extends Connection
         }
 
         if ($query->getRecordId() !== null) {
-            $url .= '/' . $query->getRecordId();
+            $url .= (Str::endsWith($url, '/') ? '' : '/') . $query->getRecordId();
         }
         if ($query->scriptParam !== null) {
             $queryParams['script.param'] = $query->scriptParam;
