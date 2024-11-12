@@ -300,6 +300,10 @@ class FileMakerConnection extends Connection
         if ($query->script !== null) {
             $queryParams['script'] = $query->script;
         }
+
+        if ($query->getRecordId() !== null) {
+            $url .= '/' . $query->getRecordId();
+        }
         if ($query->scriptParam !== null) {
             $queryParams['script.param'] = $query->scriptParam;
         }
